@@ -1,5 +1,5 @@
 # Set Base Image PHP Version FPM
-FROM php:8.1-fpm
+FROM php:7.4-fpm
 
 # Install Php Dependecies
 # Update package lists
@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
 
 # Install PHP extensions
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) gd pdo_mysql mysqli zip opcache
+    && docker-php-ext-install -j$(nproc) gd pdo_mysql mysqli zip opcache mbstring
 
 # Install Composer globally
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
