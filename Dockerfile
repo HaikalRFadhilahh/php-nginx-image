@@ -1,5 +1,5 @@
 # Set Base Image PHP Version FPM
-FROM php:8.1-fpm
+FROM php:8.2-fpm
 
 # Install Php Dependecies
 # Update package lists
