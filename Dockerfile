@@ -41,4 +41,4 @@ RUN service nginx restart
 EXPOSE 80
 
 # Start nginx and php-fpm Service
-CMD service nginx start && php-fpm
+ENTRYPOINT service nginx start && php-fpm
